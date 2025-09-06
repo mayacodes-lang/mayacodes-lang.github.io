@@ -285,18 +285,19 @@
       Website yang berdomisili di Kuningan, Jawa Barat.</p>
   </section>
   <section id="contact" x-data="{ contacts: [
-    { role: 'Satria Irawan', phone: '6282253332802' }
+    { role: 'Satria Irawan', phone: '6282253332802' },
     { role: 'Lina Aulina', phone: '6283127705035' },
     { role: 'Karlina', phone: '6282130304885' }
   ] }" class="text-center my-5">
-      <div class="container d-flex flex-column flex-md-row justify-content-center align-items-center gap-3">
-        <template x-for="(contact, index) in contacts" :key="index">
-          <button class="btn btn-success btn-lg d-inline-flex align-items-center gap-2 animate__animated animate__pulse"
-            @click="window.open(`https://wa.me/${contact.phone}?text=Halo%20Kak,%20 %20pembuatan%20websitenya%20berapa%20ya?`, '_blank')">
-            <i class="fab fa-whatsapp"></i> <span x-text="contact.role"></span>
-          </button>
-        </template>
-      </div>
+    <div class="container d-flex flex-column flex-md-row justify-content-center align-items-center gap-3">
+      <template x-for="(contact, index) in contacts" :key="index">
+        <button class="btn btn-success btn-lg d-inline-flex align-items-center gap-2 animate__animated animate__pulse"
+          @click="window.open(`https://wa.me/${contact.phone}?text=${encodeURIComponent('Halo Kak, pembuatan websitenya berapa ya?')}`, '_blank')">
+          <i class="fab fa-whatsapp"></i>
+          <span x-text="contact.role"></span>
+        </button>
+      </template>
+    </div>
   </section>
 
   <footer class="text-center py-4 bg-black border-top border-orange">
