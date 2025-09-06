@@ -292,13 +292,19 @@
     <div class="container d-flex flex-column flex-md-row justify-content-center align-items-center gap-3">
       <template x-for="(contact, index) in contacts" :key="index">
         <button class="btn btn-success btn-lg d-inline-flex align-items-center gap-2 animate__animated animate__pulse"
-          @click="window.open(`https://wa.me/${contact.phone}?text=${encodeURIComponent('Halo Kak, pembuatan websitenya berapa ya?')}`, '_blank')">
+          @click="
+          window.open(
+            `https://wa.me/${contact.phone}?text=${encodeURIComponent('Halo Kak', saya mau tanya mengenai pembuatan website, bisa dibantu?')}`, 
+            '_blank'
+          )
+        ">
           <i class="fab fa-whatsapp"></i>
           <span x-text="contact.role"></span>
         </button>
       </template>
     </div>
   </section>
+
 
   <footer class="text-center py-4 bg-black border-top border-orange">
     <p class="mb-0 text-light">&copy; <span class="text-orange fw-bold">2025</span> - <span x-text="year"
