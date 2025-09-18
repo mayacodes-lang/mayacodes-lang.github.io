@@ -11,16 +11,16 @@
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js" defer></script>
   <style>
     /* Warna oranye kustom */
-    .text-orange {
-      color: #ff6f00 !important;
+    .text-blue {
+      color: #000080 !important;
     }
 
-    .bg-orange {
-      background-color: #ff6f00 !important;
+    .bg-blue {
+      background-color: #000080 !important;
     }
 
-    .border-orange {
-      border-color: #ff6f00 !important;
+    .border-blue {
+      border-color: #000080 !important;
     }
 
     .btn-green {
@@ -43,7 +43,7 @@
 
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(255, 111, 0, 0.2);
+      box-shadow: 0 8px 20px rgba(0, 0, 80, 0.5);
     }
 
     header h1 {
@@ -61,15 +61,15 @@
 </head>
 
 <body x-data="{ year: new Date().getFullYear() }" id="maya" class="bg-dark text-light">
-  <header class="py-4 text-center bg-black border-bottom border-orange">
-    <h1 class="text-orange">Maya Code Solutions</h1>
+  <header class="py-4 text-center bg-black border-bottom border-blue">
+    <h1 class="text-blue">Maya Code Solutions</h1>
     <p class="lead">Driven by Motivation, Powered by Creation, Defined by Innovation.</p>
   </header>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-orange">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-blue">
     <div class="container">
       <a class="navbar-brand" href="#maya">
         <img class="rounded card-img-top"
-          src="img/file_00000000df3461f683aae4fd189b6af9_conversation_id=6802290f-6d54-8001-ac43-67864f8ed12e&message_id=1fc5decb-20c3-496e-8564-42df38772ef2.png"
+          src="img/Maya Code.png"
           alt="Maya Code Logo" height="40" />
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
@@ -94,7 +94,7 @@
     </div>
   </nav>
   <section id="portfolio" class="container my-5 text-center">
-    <h2 class="mb-4 text-orange">Our Portfolio</h2>
+    <h2 class="mb-4 text-blue">Our Portfolio</h2>
     <div x-data="{ projects: [
       {
         title: 'Jikanimelist',
@@ -193,7 +193,7 @@
         year: 2022,
         tech: ['Laravel', 'MySQL', 'Bootstrap', 'Leaflet', 'jQuery'],
         image: 'img/portofolio/UMKM-Kerajinan-Tangan.png'
-      },
+      }, 
       {
         title: 'Sistem Informasi Geographis UMKM Laundry di Kota Samarinda',
         description: 'Aplikasi untuk mengelola data UMKM laundry yang ada di Samarinda',
@@ -213,12 +213,12 @@
       <div class="row g-4">
         <template x-for="(project, index) in projects" :key="index">
           <div class="col-12 col-md-6 col-lg-3 mb-4">
-            <div class="card bg-black border-orange h-100 text-white">
+            <div class="card bg-black border-blue h-100 text-white">
               <img :src="project.image" class="card-img-top animate__animated" alt="Project" loading="lazy"
                 style="cursor: pointer" @click="window.open(project.image, '_blank')"
                 @mouseover="$el.classList.add('animate__pulse')" @mouseleave="$el.classList.remove('animate__pulse')" />
               <div class="card-body">
-                <h5 class="card-title text-orange" x-text="project.title"></h5>
+                <h5 class="card-title text-blue" x-text="project.title"></h5>
                 <p class="card-text" x-text="project.description"></p>
                 <p class="mb-1"><strong>Tahun:</strong> <span x-text="project.year"></span></p>
                 <p class="mb-0">
@@ -234,7 +234,7 @@
   </section>
   <section id="clients" class="my-5">
     <div class="container">
-      <h2 class="text-center mb-4 text-orange">Our Client</h2>
+      <h2 class="text-center mb-4 text-blue">Our Client</h2>
 
       <div x-data="{ clients: [
           {
@@ -261,12 +261,12 @@
         <div class="row g-4">
           <template x-for="(client, index) in clients" :key="index">
             <div class="col-12 col-md-6 col-lg-3">
-              <div class="card bg-black border-orange h-100 text-white text-center p-3">
+              <div class="card bg-black border-blue h-100 text-white text-center p-3">
                 <img :src="client.logo" class="img-fluid mb-3 animate__animated" alt="Logo Client" loading="lazy"
                   style="max-height: 120px; object-fit: contain; cursor: pointer"
                   @mouseover="$el.classList.add('animate__pulse')"
                   @mouseleave="$el.classList.remove('animate__pulse')" />
-                <h5 class="card-title text-orange" x-text="client.name"></h5>
+                <h5 class="card-title text-blue" x-text="client.name"></h5>
               </div>
             </div>
           </template>
@@ -277,12 +277,12 @@
 
 
   <section id="about" class="container text-center my-5">
-    <h2 class="mb-4 text-orange">About Us</h2>
+    <h2 class="mb-4 text-blue">About Us</h2>
     <img
-      src="img/file_00000000df3461f683aae4fd189b6af9_conversation_id=6802290f-6d54-8001-ac43-67864f8ed12e&message_id=1fc5decb-20c3-496e-8564-42df38772ef2.png"
-      alt="About Image" class="img-fluid rounded mb-4 border border-orange" style="max-width: 300px" />
+      src="img/Maya Code.png"
+      alt="About Image" class="img-fluid rounded mb-4" style="max-width: 300px" />
     <p class="mx-auto" style="max-width: 700px">Maya Code Solutions adalah UMKM yang bergerak di bidang pembuatan
-      Website yang berdomisili di Kuningan, Jawa Barat.</p>
+      Website yang berdomisili di Kuningan, Jawa Barat. Maya Code Solutions resmi berdiri sejak <b class="text-primary">1 September 2025</b> di Kuningan, Jawa Barat, Indonesia.</p>
   </section>
   <section id="contact" x-data="{ contacts: [
     { name: 'Satria Irawan', phone: '6282253332802' },
@@ -305,9 +305,9 @@
   </section>
 
 
-  <footer class="text-center py-4 bg-black border-top border-orange">
-    <p class="mb-0 text-light">&copy; <span class="text-orange fw-bold">2025</span> - <span x-text="year"
-        class="text-orange fw-bold" x-transition></span> Maya Code Solutions</p>
+  <footer class="text-center py-4 bg-black border-top border-blue">
+    <p class="mb-0 text-light">&copy; <span class="text-blue fw-bold">2025</span> - <span x-text="year"
+        class="text-blue fw-bold" x-transition></span> Maya Code Solutions</p>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
