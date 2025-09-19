@@ -1,89 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Maya Code Solutions</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js" defer></script>
-  <link rel="icon" type="image/png" href="img/Maya Code.png"> 
-  <style>
-    .btn-green {
-      background-color: #28a745;
-      border: none;
-      color: white;
-      transition: all 0.3s ease;
-    }
-
-    .btn-green:hover {
-      background-color: #218838;
-      color: #fff;
-      transform: scale(1.05);
-    }
-
-    /* Card Styling */
-    .card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0, 0, 80, 0.5);
-    }
-
-    header h1 {
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    @media (max-width: 768px) {
-      .card-title {
-        font-size: 1rem;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maya Code Solutions</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js" defer></script>
+    <link rel="icon" type="image/png" href="img/Maya Code.png" />
+    <style>
+      .btn-green {
+        background-color: #28a745;
+        border: none;
+        color: white;
+        transition: all 0.3s ease;
       }
-    }
-  </style>
-</head>
 
-<body x-data="{ year: new Date().getFullYear() }" id="maya" class="bg-dark text-light">
-  <header class="py-4 text-center bg-black border-bottom border-primary">
-    <h1 class="text-primary">Maya Code Solutions</h1>
-    <p class="lead">Driven by Motivation, Powered by Creation, Defined by Innovation.</p>
-  </header>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-primary">
-    <div class="container">
-      <a class="navbar-brand" href="#maya">
-        <img class="rounded card-img-top"
-          src="img/Maya Code.png"
-          alt="Maya Code Logo" height="40" />
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="mainNavbar">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link text-light" href="#portfolio">Portofolio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" href="#clients">Client</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" href="#about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" href="#contact">Contact</a>
-          </li>
-        </ul>
+      .btn-green:hover {
+        background-color: #218838;
+        color: #fff;
+        transform: scale(1.05);
+      }
+
+      /* Card Styling */
+      .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 80, 0.5);
+      }
+
+      header h1 {
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      @media (max-width: 768px) {
+        .card-title {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body x-data="{ year: new Date().getFullYear() }" id="maya" class="bg-dark text-light">
+    <header class="py-4 text-center bg-black border-bottom border-primary">
+      <h1 class="text-primary">Maya Code Solutions</h1>
+      <p class="lead">Driven by Motivation, Powered by Creation, Defined by Innovation.</p>
+    </header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-primary">
+      <div class="container">
+        <a class="navbar-brand" href="#maya">
+          <img class="rounded card-img-top" src="img/Maya Code.png" alt="Maya Code Logo" height="50" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <ul
+            class="navbar-nav ms-auto mb-2 mb-lg-0"
+            x-data="{ menus: [
+            { name: 'Portofolio', href: '#portfolio' },
+            { name: 'Client', href: '#clients' },
+            { name: 'About', href: '#about' },
+            { name: 'Contact', href: '#contact' }
+            ]}"
+          >
+            <template x-for="menu in menus" :key="menu.name">
+              <li class="nav-item">
+                <a class="nav-link text-primary" :href="menu.href" x-text="menu.name"></a>
+              </li>
+            </template>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
-  <section id="portfolio" class="container my-5 text-center">
-    <h2 class="mb-4 text-primary">Our Portfolio</h2>
-    <div x-data="{ projects: [
+    </nav>
+    <section id="portfolio" class="container my-5 text-center">
+      <h2 class="mb-4 text-primary">Our Portfolio</h2>
+      <div
+        x-data="{ projects: [
       {
         title: 'Jikanimelist',
         description: 'Aplikasi untuk melihat review Anime',
@@ -197,34 +196,43 @@
         image: 'img/portofolio/SPPD-Home-Page.png'
       },
       
-    ]}">
-      <div class="row g-4">
-        <template x-for="(project, index) in projects" :key="index">
-          <div class="col-12 col-md-6 col-lg-3 mb-4">
-            <div class="card bg-black border-primary h-100 text-white">
-              <img :src="project.image" class="card-img-top animate__animated" alt="Project" loading="lazy"
-                style="cursor: pointer" @click="window.open(project.image, '_blank')"
-                @mouseover="$el.classList.add('animate__pulse')" @mouseleave="$el.classList.remove('animate__pulse')" />
-              <div class="card-body">
-                <h5 class="card-title text-primary" x-text="project.title"></h5>
-                <p class="card-text" x-text="project.description"></p>
-                <p class="mb-1">
-                  <strong>Teknologi:</strong>
-                  <span x-text="project.tech.join(', ')"></span>
-                </p>
-                <p class="mb-0"><strong>Tahun:</strong> <span x-text="project.year"></span></p>
+    ]}"
+      >
+        <div class="row g-4">
+          <template x-for="(project, index) in projects" :key="index">
+            <div class="col-12 col-md-6 col-lg-3 mb-4">
+              <div class="card bg-black border-primary h-100 text-white">
+                <img
+                  :src="project.image"
+                  class="card-img-top animate__animated"
+                  alt="Project"
+                  loading="lazy"
+                  style="cursor: pointer"
+                  @click="window.open(project.image, '_blank')"
+                  @mouseover="$el.classList.add('animate__pulse')"
+                  @mouseleave="$el.classList.remove('animate__pulse')"
+                />
+                <div class="card-body">
+                  <h5 class="card-title text-primary" x-text="project.title"></h5>
+                  <p class="card-text" x-text="project.description"></p>
+                  <p class="mb-1">
+                    <strong>Teknologi:</strong>
+                    <span x-text="project.tech.join(', ')"></span>
+                  </p>
+                  <p class="mb-0"><strong>Tahun:</strong> <span x-text="project.year"></span></p>
+                </div>
               </div>
             </div>
-          </div>
-        </template>
+          </template>
+        </div>
       </div>
-    </div>
-  </section>
-  <section id="clients" class="my-5">
-    <div class="container">
-      <h2 class="text-center mb-4 text-primary">Our Client</h2>
+    </section>
+    <section id="clients" class="my-5">
+      <div class="container">
+        <h2 class="text-center mb-4 text-primary">Our Client</h2>
 
-      <div x-data="{ clients: [
+        <div
+          x-data="{ clients: [
           {
             name: 'Suemeru Group',
             logo: 'img/client/Suemerugrupcom.png'
@@ -245,59 +253,67 @@
             name: 'Pemerintah Kota Samarinda',
             logo: 'img/client/PemkotSmd.png'
           }
-        ]}">
-        <div class="row g-4">
-          <template x-for="(client, index) in clients" :key="index">
-            <div class="col-12 col-md-6 col-lg-3">
-              <div class="card bg-black border-primary h-100 text-white text-center p-3">
-                <img :src="client.logo" class="img-fluid mb-3 animate__animated" alt="Logo Client" loading="lazy"
-                  style="max-height: 120px; object-fit: contain; cursor: pointer"
-                  @mouseover="$el.classList.add('animate__pulse')"
-                  @mouseleave="$el.classList.remove('animate__pulse')" />
-                <h5 class="card-title text-primary" x-text="client.name"></h5>
+        ]}"
+        >
+          <div class="row g-4">
+            <template x-for="(client, index) in clients" :key="index">
+              <div class="col-12 col-md-6 col-lg-3">
+                <div class="card bg-black border-primary h-100 text-white text-center p-3">
+                  <img
+                    :src="client.logo"
+                    class="img-fluid mb-3 animate__animated"
+                    alt="Logo Client"
+                    loading="lazy"
+                    style="max-height: 120px; object-fit: contain; cursor: pointer"
+                    @mouseover="$el.classList.add('animate__pulse')"
+                    @mouseleave="$el.classList.remove('animate__pulse')"
+                  />
+                  <h5 class="card-title text-primary" x-text="client.name"></h5>
+                </div>
               </div>
-            </div>
-          </template>
+            </template>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-
-  <section id="about" class="container text-center my-5">
-    <h2 class="mb-4 text-blue">About Us</h2>
-    <img
-      src="img/Maya Code Logo.png"
-      alt="About Image" class="img-fluid rounded mb-4" style="max-width: 300px" />
-    <p class="mx-auto" style="max-width: 700px">Maya Code Solutions resmi berdiri sejak <b class="text-primary">1 September 2025</b> di Kuningan, Jawa Barat, Indonesia. Maya Code Solutions adalah UMKM yang bergerak di bidang pembuatan
-      Website dan Hosting Web yang bisa jadi skema Bisnis to Bisnis (B2B) atau Bisnis to Client (B2C)</p>
-  </section>
-  <section id="contact" x-data="{ contacts: [
+    <section id="about" class="container text-center my-5">
+      <h2 class="mb-4 text-blue">About Us</h2>
+      <img src="img/Maya Code Logo.png" alt="About Image" class="img-fluid rounded mb-4" style="max-width: 300px" />
+      <p class="mx-auto" style="max-width: 700px">
+        Maya Code Solutions resmi berdiri sejak <b class="text-primary">1 September 2025</b> di Kuningan, Jawa Barat, Indonesia. Maya Code Solutions adalah UMKM yang bergerak di bidang pembuatan Website dan Hosting Web yang bisa jadi skema
+        Bisnis to Bisnis (B2B) atau Bisnis to Client (B2C)
+      </p>
+    </section>
+    <section
+      id="contact"
+      x-data="{ contacts: [
     { name: 'Satria Irawan', phone: '6282253332802' },
     { name: 'Lina Aulina', phone: '6283127705035' },
-  ] }" class="text-center my-5">
-    <div class="container d-flex flex-column flex-md-row justify-content-center align-items-center gap-3">
-      <template x-for="(contact, index) in contacts" :key="index">
-        <button class="btn btn-success btn-lg d-inline-flex align-items-center gap-2 animate__animated animate__pulse"
-          @click="
+  ] }"
+      class="text-center my-5"
+    >
+      <div class="container d-flex flex-column flex-md-row justify-content-center align-items-center gap-3">
+        <template x-for="(contact, index) in contacts" :key="index">
+          <button
+            class="btn btn-success btn-lg d-inline-flex align-items-center gap-2 animate__animated animate__pulse"
+            @click="
           window.open(
             `https://wa.me/${contact.phone}?text=${encodeURIComponent('Halo Kak ' + contact.name + ', saya mau tanya mengenai pembuatan website, bisa dibantu?')}`, 
             '_blank'
           )
-        ">
-          <i class="fab fa-whatsapp"></i>
-          <span x-text="contact.name"></span>
-        </button>
-      </template>
-    </div>
-  </section>
+        "
+          >
+            <i class="fab fa-whatsapp"></i>
+            <span x-text="contact.name"></span>
+          </button>
+        </template>
+      </div>
+    </section>
 
-
-  <footer class="text-center py-4 bg-black border-top border-primary">
-    <p class="mb-0 text-light">&copy; <span class="text-primary fw-bold">2025</span> - <span x-text="year"
-        class="text-primary fw-bold" x-transition></span> Reserved by Maya Code Solutions</p>
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
+    <footer class="text-center py-4 bg-black border-top border-primary">
+      <p class="mb-0 text-light">&copy; <span class="text-primary fw-bold">2025</span> - <span x-text="year" class="text-primary fw-bold" x-transition></span> Reserved by Maya Code Solutions</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
