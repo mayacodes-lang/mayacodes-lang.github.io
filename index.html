@@ -105,6 +105,13 @@
         image: 'img/portofolio/ARMS.png'
       },
       {
+        title: 'Document Archiving Management System',
+        description: 'Aplikasi untuk mengelola data Surat Dinas',
+        year: 2024,
+        tech: ['Laravel', 'MySQL', 'Bootstrap', 'jQuery'],
+        image: 'img/portofolio/DAMS.png'
+      },
+      {
         title: 'Sistem Informasi Surat Operasional Tambang',
         description: 'Aplikasi untuk mengelola data Surat Masuk dan Surat Keluar Perusahaan Alam Karya Gemilang',
         year: 2024,
@@ -216,10 +223,10 @@
                   <h5 class="card-title text-primary" x-text="project.title"></h5>
                   <p class="card-text" x-text="project.description"></p>
                   <p class="mb-1">
-                    <strong>Teknologi:</strong>
+                    <strong>Tech Stack :</strong>
                     <span x-text="project.tech.join(', ')"></span>
                   </p>
-                  <p class="mb-0"><strong>Tahun:</strong> <span x-text="project.year"></span></p>
+                  <p class="mb-0"><strong>Year :</strong> <span x-text="project.year"></span></p>
                 </div>
               </div>
             </div>
